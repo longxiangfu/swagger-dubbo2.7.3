@@ -1,8 +1,6 @@
 # swagger-dubbo
 dubbo2.7.3集成swagger2
-注意：本项目转自https://github.com/Sayi/swagger-dubbo，在2.0.1版本基础上，修复了一些bug。
-1.修复: 支持bubbo2.7.3
-2.修复: 支持返回对象泛型参数
+注意：本项目转自https://github.com/Sayi/swagger-dubbo，在2.0.1版本基础上，修复了一些bug。  1.修复: 支持bubbo2.7.3  2.修复: 支持返回对象泛型参数
 
 
 :balloon: :balloon: :balloon:  🌱 🌱 🌱 
