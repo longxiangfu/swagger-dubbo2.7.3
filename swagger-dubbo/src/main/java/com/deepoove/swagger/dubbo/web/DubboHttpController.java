@@ -116,6 +116,7 @@ public class DubboHttpController {
 				args[i] = suggestPrameterValue;
 			}
 			result = method.invoke(ref, args);
+			logger.info("返回接口：" + result);
 		}
 		return ResponseEntity.ok(Json.mapper().writeValueAsString(result));
 	}

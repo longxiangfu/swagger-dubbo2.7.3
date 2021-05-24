@@ -47,7 +47,18 @@ public class ReferenceManager {
             return instance;
         }
         for (ServiceBean<?> bean : services) {
-            interfaceMapRef.putIfAbsent(bean.getInterfaceClass(), bean.getRef());
+            String beanName = bean.getBeanName(); // beanName="ServiceBean:com.xfdsx.api.procurement.ProcurementService:v1.1.0"
+            String path = bean.getPath(); // path="com.xfdsx.api.procurement.ProcurementService"
+            String suffixPath = beanName.substring(beanName.lastIndexOf(":") + 1);
+            if (path.equals("com.xfdsx.api.procurement.ProcurementService")) {
+                if (suffixPath.equals("v1.1.0")) { // 只请求v1.1.0版本
+                    interfaceMapRef.putIfAbsent(bean.getInterfaceClass(), bean.getRef());
+                }
+
+            }else {
+                // 其他接口直接放
+                interfaceMapRef.putIfAbsent(bean.getInterfaceClass(), bean.getRef());
+            }
         }
         
         //
